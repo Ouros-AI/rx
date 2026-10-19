@@ -79,3 +79,49 @@ rx login chatgpt   # Mounts ChatGPT Plus, Pro, or Team sessions directly
 rx login claude    # Anthropic API key (Claude Opus 5.5, Sonnet 5.5, Haiku 5.5)
 rx login grok      # xAI API key
 ```
+Provider / Target,Auth Flow,Prompt Caching,Details
+Claude (Sonnet/Opus 5.5),rx login claude / ANTHROPIC_API_KEY,Yes,"System prompt, active tools, and latest-turn caching enabled"
+ChatGPT (Plus/Pro/Team),rx login chatgpt,Varies,Web-authenticated subscription sessions
+OpenAI API,OPENAI_API_KEY,Yes,Standard API endpoint integration
+Grok (xAI),rx login grok,No,xAI API access
+NVIDIA NIM,Configurable baseURL,Custom,Microservice container endpoints
+Local LLMs (llama.cpp),Custom endpoint,Local,"Zero-network, offline local inference"
+
+## Execution Modes
+Interactive Studio
+Launch the full terminal workspace with integrated tabs and preview panes:
+
+```bash
+rx
+```
+## Headless & Pipeline Execution
+Execute ad-hoc tasks, query repo architecture, or pipe stdin into an agent turn:
+
+```bash
+# Single-turn CLI execution
+rx ask "Investigate why the hydration step fails on /dashboard"
+
+# Shell pipeline integration
+cat error.log | rx ask "Identify the root cause in src/core/engine.rs"
+```
+## Controls & Keybindings
+Shortcut,Function
+Enter,Submit instruction
+Ctrl+J,Multi-line input newline
+F8,Toggle live HTML / Browser verification pane
+F5,Hot-swap active inference model
+F3,Quick-search workspace files & pin to active turn
+Ctrl+N,Open isolated session tab
+Alt+← / Alt+→,Cycle active session tabs
+Ctrl+C,Abort active tool execution (press twice to quit)
+/,"Open built-in slash command menu (/view, /recall, etc.)"
+
+## Data & Security
+Credential Storage: User credentials reside in ~/.config/rx with strict 0600 owner-only file permissions.
+
+Session Storage: Checkpoints are encrypted per project inside .ouros/.
+
+Telemetry: Exactly 0 lines of telemetry or telemetry collectors. Data leaves your workstation strictly to contact the model API you specify.
+
+License
+Proprietary software. See LICENSE for terms. Open-source dependencies and acknowledgments are detailed in THIRD-PARTY-NOTICES.md.
