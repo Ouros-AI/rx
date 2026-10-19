@@ -1,3 +1,4 @@
+<img width="1200" height="802" alt="demo" src="https://github.com/user-attachments/assets/31426ab9-a26f-4867-8c89-60587b486362" />
 <div align="center">
 
 # AGENT-RX: SURGICALLY PRECISE CODING AGENT
@@ -13,9 +14,8 @@
   Most coding agents edit code blindly, run <code>cargo check</code>, and assume everything works.<br/>
   <b>RX renders the UI directly beside your terminal, clicks buttons, scrolls pages, and inspects the live DOM before calling a job done.</b>
 </p>
-
-src="https://github.com/user-attachments/assets/2846f9f8-08ff-445c-9975-b88b84125c3f" />
-" alt="Agent RX Launch and Splash" width="100%" />
+<img width="1200" height="802" alt="demo" src="https://github.com/user-attachments/assets/31426ab9-a26f-4867-8c89-60587b486362" />
+<div align="center">
 
 </div>
 
