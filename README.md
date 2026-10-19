@@ -9,10 +9,7 @@
 [![Zero Telemetry](https://img.shields.io/badge/Telemetry-Zero-success.svg?style=flat-square)](#data--security)
 [![Architecture](https://img.shields.io/badge/Platform-macOS%20%7C%20Linux-lightgrey.svg?style=flat-square)](#)
 
-<p align="center">
-  Most coding agents edit code blindly, run <code>cargo check</code>, and assume everything works.<br/>
-  <b>RX renders the UI directly beside your terminal, clicks buttons, scrolls pages, and inspects the live DOM before calling a job done.</b>
-</p>
+
 <p align="center">
   Most coding agents edit code blindly, run <code>cargo check</code>, and assume everything works.<br/>
   <b>RX renders the UI directly beside your terminal, clicks buttons, scrolls pages, and inspects the live DOM before calling a job done.</b>
