@@ -1,5 +1,4 @@
-<img width="1200" height="802" alt="demo" src="https://github.com/user-attachments/assets/31426ab9-a26f-4867-8c89-60587b486362" />
-<div align="center">
+
 
 # AGENT-RX: SURGICALLY PRECISE CODING AGENT
 
