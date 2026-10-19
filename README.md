@@ -14,7 +14,8 @@
   <b>RX renders the UI directly beside your terminal, clicks buttons, scrolls pages, and inspects the live DOM before calling a job done.</b>
 </p>
 
-<img src="https://github.com/user-attachments/assets/518e3852-c3f2-4919-86cb-b80c3558c49d" alt="Agent RX Launch and Splash" width="100%" />
+src="https://github.com/user-attachments/assets/2846f9f8-08ff-445c-9975-b88b84125c3f" />
+" alt="Agent RX Launch and Splash" width="100%" />
 
 </div>
 
