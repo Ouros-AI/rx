@@ -3,8 +3,9 @@
 # RX
 
 
-
-https://github.com/user-attachments/assets/6b77e444-359b-41c7-8ab2-e7d4c28870c7
+<p align="center">
+  <video src="Screen.Recording.2026-10-19.at.4.04.15.PM.mov" width="100%" autoplay loop muted playsinline></video>
+</p>
 
 
 
