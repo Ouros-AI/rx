@@ -3,9 +3,7 @@
 # RX
 
 
-<p align="center">
-  <video src="Screen.Recording.2026-10-19.at.4.04.15.PM.mov" width="100%" autoplay loop muted playsinline></video>
-</p>
+<img width="1200" height="802" alt="demo" src="https://github.com/user-attachments/assets/c7b302f0-cc4a-4205-a6d2-24ed67a21956" />
 
 
 
