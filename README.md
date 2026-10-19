@@ -2,6 +2,14 @@
 
 # RX
 
+
+
+https://github.com/user-attachments/assets/6b77e444-359b-41c7-8ab2-e7d4c28870c7
+
+
+
+
+
 ### The terminal coding agent that looks at what it built.
 
 [![Rust](https://img.shields.io/badge/Language-Rust-orange.svg?style=flat-square)](https://www.rust-lang.org/)
