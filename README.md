@@ -4,7 +4,7 @@
 
 ### The terminal coding agent that looks at what it built.
 
-[![Rust](https://img.shields.io/badge/Language-Rust-orange.svg?style=flat-square)](https://www.rust-lang.org/)
+[![Rust](https://img.shields.io/badge/Language-Rust-orange.svg?style=flat-square)](https://www.rust-lang.org)
 [![License: Proprietary](https://img.shields.io/badge/License-Proprietary-blue.svg?style=flat-square)](LICENSE)
 [![Zero Telemetry](https://img.shields.io/badge/Telemetry-Zero-success.svg?style=flat-square)](#data--security)
 [![Architecture](https://img.shields.io/badge/Platform-macOS%20%7C%20Linux-lightgrey.svg?style=flat-square)](#)
@@ -14,9 +14,7 @@
   <b>RX renders the UI directly beside your terminal, clicks buttons, scrolls pages, and inspects the live DOM before calling a job done.</b>
 </p>
 
-<!-- Place your terminal recording / demo GIF here -->
-<img src="[YOUR_UPLOADED_GIF_URL](https://github.com/user-attachments/assets/c7b302f0-cc4a-4205-a6d2-24ed67a21956)" alt="Agent RX Launch and Splash" width="100%" style="border-radius: 8px;" />
-<img width="1200" height="802" alt="demo" src="https://github.com/user-attachments/assets/c7b302f0-cc4a-4205-a6d2-24ed67a21956" />
+<img src="https://github.com/user-attachments/assets/518e3852-c3f2-4919-86cb-b80c3558c49d" alt="Agent RX Launch and Splash" width="100%" />
 
 </div>
 
@@ -41,7 +39,7 @@ Don't contaminate your refactoring loop. Each tab maintains an independent memor
 * Spawn a fresh thread with `Ctrl+N` and cycle contexts with `Alt+←/→`.
 
 ### ⚡ Transparent Context & Token Efficiency
-No bloated system prompts or silent context clipping. 
+No bloated system prompts or silent context clipping.
 * System instructions dynamically reflect only the tools active in your session.
 * Massive tool dumps and stdout buffers are lazily offloaded instead of hijacking your token window.
 * A live token gauge measures consumption directly against the model's actual physical window.
@@ -59,7 +57,6 @@ Install the native binary via the standalone script:
 
 ```bash
 curl -fsSL [https://github.com/Ouros-AI/rx/releases/latest/download/install.sh](https://github.com/Ouros-AI/rx/releases/latest/download/install.sh) | sh
-``` 
 
 ## Self-Updates
 RX monitors release channels once per day with a non-intrusive one-line indicator.
