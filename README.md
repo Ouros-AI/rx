@@ -15,6 +15,7 @@
 </p>
 
 <!-- Place your terminal recording / demo GIF here -->
+<img src="[YOUR_UPLOADED_GIF_URL](https://github.com/user-attachments/assets/c7b302f0-cc4a-4205-a6d2-24ed67a21956)" alt="Agent RX Launch and Splash" width="100%" style="border-radius: 8px;" />
 <img width="1200" height="802" alt="demo" src="https://github.com/user-attachments/assets/c7b302f0-cc4a-4205-a6d2-24ed67a21956" />
 
 </div>
