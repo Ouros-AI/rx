@@ -1,96 +1,81 @@
+<div align="center">
+
 # RX
 
-**A precise coding agent for your terminal, written in Rust.** It works inside
-your project — running your builds and tests — and opens the pages it builds in
-a live pane beside the chat, then drives them to check its own work.
+### The terminal coding agent that looks at what it built.
 
-Installs in one line. Brings your own model. Sends nothing to Ouros AI.
+[![Rust](https://img.shields.io/badge/Language-Rust-orange.svg?style=flat-square)](https://www.rust-lang.org/)
+[![License: Proprietary](https://img.shields.io/badge/License-Proprietary-blue.svg?style=flat-square)](LICENSE)
+[![Zero Telemetry](https://img.shields.io/badge/Telemetry-Zero-success.svg?style=flat-square)](#data--security)
+[![Architecture](https://img.shields.io/badge/Platform-macOS%20%7C%20Linux-lightgrey.svg?style=flat-square)](#)
 
-```sh
-rx login chatgpt
-rx
+<p align="center">
+  Most coding agents edit code blindly, run <code>cargo check</code>, and assume everything works.<br/>
+  <b>RX renders the UI directly beside your terminal, clicks buttons, scrolls pages, and inspects the live DOM before calling a job done.</b>
+</p>
+
+<!-- Place your terminal recording / demo GIF here -->
+<img src="demo.gif" alt="RX in action with live browser pane" width="100%" style="border-radius: 8px; border: 1px solid #333;" />
+
+</div>
+
+---
+
+## The Blindspot in Terminal Agents
+
+Every modern terminal agent suffers from the same failure mode: it edits frontends, dashboards, and client state without eyes. It runs tests, sees exit code `0`, and leaves broken hydration, misaligned grids, and dead event handlers for you to diagnose.
+
+RX pairs a native, high-performance terminal engine with an integrated browser pane. When RX writes front-end logic, it launches the page, verifies layout states, interacts with the rendered DOM, and verifies visual fidelity autonomously.
+
+---
+
+## Capabilities
+
+### 👁️ Autonomous Visual Verification
+RX doesn't stop at file writes. It opens a live browser viewport directly alongside your session, executes end-to-end interactions (clicks, keyboard input, scrolls), and parses the rendered DOM tree to verify state before declaring the turn complete.
+* Toggle the live engine manually via `F8` or summon it using `/view` and `/browser`.
+
+### 🧠 Tab-Isolated Cognition
+Don't contaminate your refactoring loop. Each tab maintains an independent memory space, working directory, and conversation context. Run a full auth redesign in Tab 1 while iterating on an exploratory API fix in Tab 2 without dragging 50k tokens of unrelated baggage across the wire.
+* Spawn a fresh thread with `Ctrl+N` and cycle contexts with `Alt+←/→`.
+
+### ⚡ Transparent Context & Token Efficiency
+No bloated system prompts or silent context clipping. 
+* System instructions dynamically reflect only the tools active in your session.
+* Massive tool dumps and stdout buffers are lazily offloaded instead of hijacking your token window.
+* A live token gauge measures consumption directly against the model's actual physical window.
+
+### 🔒 Zero Telemetry, Local-First
+* **Zero Ouros Intermediaries:** Prompts, context buffers, and tool evaluations stream straight to your chosen endpoint. Nothing is logged, proxied, or routed through Ouros servers.
+* **Encrypted State:** Session history is encrypted locally inside each project's `.ouros` ledger and recallable anytime via `/recall`.
+* **Sanitized Context:** RX never indexes or reads your `.env` secret files.
+
+---
+
+## Installation
+
+Install the native binary via the standalone script:
+
+```bash
+curl -fsSL [https://github.com/Ouros-AI/rx/releases/latest/download/install.sh](https://github.com/Ouros-AI/rx/releases/latest/download/install.sh) | sh
+``` 
+
+## Self-Updates
+RX monitors release channels once per day with a non-intrusive one-line indicator.
+```
+bash
+rx update          # Install latest release, preserving previous fallback
+rx update --check  # Probe release status
 ```
 
-## Install
+*Disable automated checking by setting RX_NO_UPDATE_CHECK=1 in your shell profile).*
 
-```sh
-curl -fsSL https://github.com/Ouros-AI/rx/releases/latest/download/install.sh | sh
+## Model Providers & Runtime Matrix
+Bring your own keys or leverage consumer subscriptions directly without markup:
+
+```bash
+# Direct subscription & API logins
+rx login chatgpt   # Mounts ChatGPT Plus, Pro, or Team sessions directly
+rx login claude    # Anthropic API key (Claude Opus 5.5, Sonnet 5.5, Haiku 5.5)
+rx login grok      # xAI API key
 ```
-
-macOS on Apple silicon and Intel. RX installs to `~/.local/share/rx` and links
-`~/.local/bin/rx`. From a downloaded archive:
-`sh install.sh rx-aarch64-apple-darwin.tar.gz`.
-
-## Sign in
-
-```sh
-rx login chatgpt   # ChatGPT Plus, Pro or Team
-rx login claude    # Anthropic API key — console.anthropic.com
-rx login grok
-```
-
-`ANTHROPIC_API_KEY` and `OPENAI_API_KEY` in your environment also work, and a
-saved ChatGPT sign-in takes precedence over `OPENAI_API_KEY`. NVIDIA NIM and
-local `llama.cpp` models are supported.
-
-Claude Pro and Max subscriptions cannot be used: Anthropic permits only API keys
-in third-party tools. Through the API, Claude Opus 5.5, Sonnet 5.5 and Haiku 5.5
-are available, with prompt caching on the system prompt, the tools and the latest
-turn. RX opens on a model you are signed in for; a Claude-only setup starts on
-Sonnet 5.5.
-
-## What it does differently
-
-**It checks its own work.** RX renders the pages it writes in a live pane, then
-clicks, scrolls and types through them — reading the result before it tells you
-the job is done. `/view` and `/browser` open a pane yourself; `F8` hides it.
-
-**Tabs keep their own mind.** Every tab holds its own conversation, context and
-working directory, so a tab refactoring auth does not drag a second tab's context
-along with it. Each tab cancels independently.
-
-**Context you can see.** The system prompt describes only the tools the session
-actually has, large tool outputs are offloaded rather than stuffed into the
-window, and the context meter shows usage against the model's real limit.
-
-**Memory that outlives the session.** Session checkpoints are encrypted per
-project, searchable with `/recall`, and retain the model's reasoning for later
-review.
-
-**Your model, not ours.** A ChatGPT subscription, an Anthropic API key, Grok,
-NIM, or a model running on your own machine.
-
-## Keys
-
-| Key | Action |
-| --- | --- |
-| Enter / Ctrl+J | Send / new line |
-| F5 | Pick a model |
-| F3 | Browse files and attach paths |
-| F8 | Show or hide the HTML/browser pane |
-| Ctrl+N, Alt+←/→ | New tab, switch tabs |
-| Ctrl+C | Stop the current turn (twice to quit) |
-
-Type `/` for commands. `rx ask "…"` runs one prompt and prints the answer.
-
-## Updates
-
-```sh
-rx update          # install the latest release, keeping the previous one
-rx update --check  # only check
-```
-
-RX checks for updates at most once a day and shows a one-line notice. Set
-`RX_NO_UPDATE_CHECK=1` to turn the check off. See CHANGELOG.md for changes.
-
-## Data
-
-Credentials are stored in `~/.config/rx` with owner-only permissions. Session
-checkpoints are encrypted in each project's `.ouros` directory. RX sends your
-prompts and the files and command output the agent reads to the model provider
-you choose, and nothing to Ouros AI. RX does not read a project's `.env` file.
-
-## License
-
-RX is proprietary software; see LICENSE. Open-source components are listed in
-THIRD-PARTY-NOTICES.md.
