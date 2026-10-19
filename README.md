@@ -2,13 +2,6 @@
 
 # RX
 
-
-<img width="1200" height="802" alt="demo" src="https://github.com/user-attachments/assets/c7b302f0-cc4a-4205-a6d2-24ed67a21956" />
-
-
-
-
-
 ### The terminal coding agent that looks at what it built.
 
 [![Rust](https://img.shields.io/badge/Language-Rust-orange.svg?style=flat-square)](https://www.rust-lang.org/)
@@ -22,7 +15,7 @@
 </p>
 
 <!-- Place your terminal recording / demo GIF here -->
-<img src="demo.gif" alt="RX in action with live browser pane" width="100%" style="border-radius: 8px; border: 1px solid #333;" />
+<img width="1200" height="802" alt="demo" src="https://github.com/user-attachments/assets/c7b302f0-cc4a-4205-a6d2-24ed67a21956" />
 
 </div>
 
