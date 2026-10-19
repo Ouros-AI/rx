@@ -1,6 +1,6 @@
 <div align="center">
 
-# RX
+# AGENT-RX: SURGICALLY PRECISE CODING AGENT
 
 ### The terminal coding agent that looks at what it built.
 
